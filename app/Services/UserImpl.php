@@ -36,7 +36,7 @@ class UserImpl implements UserContract {
     }
 
     public function create(array $data) {
-        dd($data);
+        dd(app('hash')->make($data['password']));
         return $this->user->create([
                     'full_name' => $data['full_name'],
                     'email' => $data['email'],
