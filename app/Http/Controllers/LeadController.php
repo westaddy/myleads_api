@@ -33,6 +33,12 @@ class LeadController extends Controller
 
     public function store(Request $request){
 
+        if ($this->leadRepo->leadExists($request->email)) {
+            $this->responseBody->setSuccess(false);
+            $this->responseBody->setMessage('Contact exists');
+            $this->responseBody->setData(null);
+            return response()->json($this->responseBody,422);
+        }
         $lead = $this->leadRepo->create($request->all());
         $this->responseBody->setSuccess(true);
         $this->responseBody->setMessage('Lead Created successfully');

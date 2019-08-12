@@ -46,8 +46,8 @@ class LeadImpl implements LeadContract {
         return $this->lead->where('id', $id)->delete();
     }
 
-    public function leadExists($id) {
-        if ($this->lead->where('id', $id)->exists()) {
+    public function leadExists($email) {
+        if ($this->lead->where('email', $email)->exists()) {
             return true;
         }
         return false;

@@ -21,7 +21,7 @@ interface Lead {
 
     public function create(array $data);
 
-    public function leadExists($id);
+    public function leadExists($email);
 
     public function update(array $data,$id);
 
