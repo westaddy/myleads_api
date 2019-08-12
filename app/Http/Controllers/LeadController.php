@@ -23,7 +23,7 @@ class LeadController extends Controller
         $this->middleware('jwt.auth');
     }
 
-    public function index(){
+    public function index(Request $request){
         $leads = $this->leadRepo->all();
         $this->responseBody->setSuccess(true);
         $this->responseBody->setMessage(null);

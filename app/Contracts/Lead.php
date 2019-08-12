@@ -17,6 +17,8 @@ interface Lead {
 
     public function all();
 
+    public function allByCreatedAt($created_at);
+
     public function get($id);
 
     public function create(array $data);
