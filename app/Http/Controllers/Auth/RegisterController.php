@@ -57,7 +57,6 @@ class RegisterController extends Controller {
         ];
 
         $user = $this->userRepo->create($data);
-
         //event(new UserRegistered($user));
 
         $this->responseBody->setSuccess(true);
