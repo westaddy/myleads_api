@@ -46,13 +46,6 @@ class LoginController extends Controller {
 
 
 
-        $count = User::whereEmail($request->email)->whereDeleted(true)->count();
-        if ($count > 0) {
-            $this->responseBody->setSuccess(false);
-            $this->responseBody->setMessage('Your account has been deleted, Please contact customer support for further assistance.');
-            $this->responseBody->setData(null);
-            return response()->json($this->responseBody, 404);
-        }
         try {
             $token = $this->jwt->attempt($request->only('email', 'password'));
 
