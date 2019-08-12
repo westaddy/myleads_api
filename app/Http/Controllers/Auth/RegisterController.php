@@ -60,7 +60,7 @@ class RegisterController extends Controller {
         //event(new UserRegistered($user));
 
         $this->responseBody->setSuccess(true);
-        $this->responseBody->setMessage('Login successfully');
+        $this->responseBody->setMessage('Registration successfully');
         $this->responseBody->setData([
             'token' => $this->jwt->fromUser($user),
             'id' => $user->id

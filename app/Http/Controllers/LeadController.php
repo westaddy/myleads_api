@@ -36,7 +36,7 @@ class LeadController extends Controller
         $lead = $this->leadRepo->create($request->all());
         $this->responseBody->setSuccess(true);
         $this->responseBody->setMessage('Lead Created successfully');
-        $this->responseBody->setData($lead);
+        $this->responseBody->setData(null);
         return response()->json($this->responseBody);
     }
 
