@@ -24,7 +24,7 @@ class LeadController extends Controller
     }
 
     public function index(Request $request){
-        $leads = $this->leadRepo->allByCreatedAt();
+        $leads = $this->leadRepo->allByCreatedAt($request->created_at);
         $this->responseBody->setSuccess(true);
         $this->responseBody->setMessage(null);
         $this->responseBody->setData($leads);
