@@ -56,6 +56,6 @@ class LeadImpl implements LeadContract {
 
     public function allByCreatedAt($created_at)
     {
-        return $this->lead->where('created_at',$created_at)->get();
+        return $this->lead->whereDate('created_at',$created_at)->get();
     }
 }
