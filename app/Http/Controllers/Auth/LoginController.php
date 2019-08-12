@@ -47,6 +47,7 @@ class LoginController extends Controller {
 
 
         try {
+            dd($request);
             $token = $this->jwt->attempt($request->only('email', 'password'));
 
             if ($token == null) {
